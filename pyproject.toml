@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pcd2nav2map"
+version = "0.1.0"
+description = "Turn a 3D LiDAR point cloud map (.pcd) into a Nav2 2D occupancy map: height-band GUI with live preview, floor-relative heights, and a GIMP layer workflow for hand editing."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = ["numpy", "scipy", "pillow", "pyyaml"]
+keywords = ["ros2", "nav2", "slam", "lidar", "point cloud", "occupancy grid", "pcd", "map"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License",
+               "Topic :: Scientific/Engineering"]
+
+[project.scripts]
+pcd2nav2map = "pcd2nav2map.cli:main"
+pcd2nav2map-layers = "pcd2nav2map.cli:layers_main"
+
+[tool.setuptools]
+packages = ["pcd2nav2map"]
